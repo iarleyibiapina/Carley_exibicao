@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: sans-serif;
+}
+
+:root {
+  --orange: #f78b00;
+  --blue: #00285f;
+  --gray: #ededed;
+}
+
+body {
+  background-color: var(--orange);
+}
+
+header {
+  box-shadow: 200px 10px 10px 0px var(--blue);
+  /* funcionar no navegador safare */
+  -webkit-box-shadow: 10px 0px 10px 0px var(--blue);
+  /* funcionar no mozila */
+  -moz-box-shadow: 10px 0px 10px 0px var(--blue);
+}
+
+header,
+header nav {
+  background-color: var(--blue);
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  color: var(--gray);
+}
+
+nav ul a {
+  text-decoration: none;
+  color: var(--gray);
+}
+
+nav .hover-icon {
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+nav .hover-icon:hover {
+  scale: 1.2;
+  padding: 0 20px;
+  text-shadow: 4px 4px black;
+  transition: 200ms ease;
+}
+
+nav ul a.logout {
+  color: red;
+}
+nav ul:hover {
+  scale: 1.2;
+  padding: 0 20px;
+  text-shadow: 4px 4px black;
+  transition: 200ms ease;
+}
+
+ul {
+  padding: 0 20px;
+}
+
+.user-icon {
+  cursor: pointer;
+}
+
+main {
+  width: 100%;
+}
+
+/* BODY da pagina */
+.announcement {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+main {
+  position: relative;
+}
+
+.content {
+  border-radius: 10px;
+  height: 400px;
+  width: 400px;
+  margin: 20px;
+  /* max-width: 90%; */
+  /* max-height: 90%; */
+  background-color: var(--gray);
+  padding: 15px;
+  display: grid;
+  justify-items: center;
+}
+.content:hover {
+  scale: 1.05;
+  box-shadow: 3px 3px 2px #636363;
+  transition: ease;
+}
+
+.descricao {
+  max-width: 350px;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.header-card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user-icon {
+  min-width: 30px;
+  min-height: 30px;
+  color: var(--gray);
+}
+
+.header-card .user-icon {
+  color: black;
+}
+
+.header-card h2 {
+  max-width: 200px;
+  font-size: small;
+  word-break: break-word;
+  margin: 5px;
+}
+
+.header-card a {
+  font-size: 15px;
+  text-decoration: none;
+  margin: 0 4px;
+  padding: 0 8px;
+  color: white;
+}
+
+.btnEditar {
+  background-color: var(--orange);
+  border-radius: 5px;
+}
+.btnExcluir {
+  background-color: red;
+  border-radius: 5px;
+}

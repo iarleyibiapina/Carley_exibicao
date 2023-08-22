@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel 'nomeUsuario'</title>
+    <link rel="icon" href="../images/logo.png" />
+    <link rel="stylesheet" href="../style/painel_logado.css" />
+    <link rel="stylesheet" href="../style/anuncio.css" />
+  </head>
+  <body>
+    <header>
+      <div class="nome">
+        <h1>Excluir Anuncio:</h1>
+      </div>
+      <nav>
+        <ul>
+          <a href="#">Inserir anuncio</a>
+        </ul>
+        <ul>
+          <a href="../painel_logado/meuAnuncio.html">Meus anuncios</a>
+        </ul>
+        <ul>
+          <a href="../painel_logado/painel.html">Ver todos anuncios</a>
+        </ul>
+        <ul>
+          <a class="logout" href="../index.html">Sair</a>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="form-container">
+        <form action="../painel_logado/painel.html" method="post">
+          <div class="inputs">
+            <input
+              type="text"
+              autofocus
+              placeholder="Titulo"
+              name="titulo"
+              value="'titulo do anuncio que vai ser deletado'"
+              readonly
+            />
+            <textarea
+              style="resize: none"
+              value=""
+              placeholder="Descrição"
+              maxlength="255"
+              name="descricao"
+              rows="5"
+              cols="30"
+              readonly
+            >
+'descricao do anuncio que vai ser deletado, apenas para visualizaçao, nao editavel'</textarea
+            >
+
+            <input type="file" name="foto" readonly />
+          </div>
+          <div class="btn" style="justify-content: center" ;>
+            <!-- apenas invertendo hover btn -->
+            <style>
+              .form-container a:hover {
+                transform: scale(1.05);
+                color: var(--orange);
+                border-color: var(--orange);
+              }
+              .btn button:hover {
+                transform: scale(1.05);
+                color: red;
+                border-color: red;
+              }
+            </style>
+            <a href="../painel_logado/painel.html">Cancelar</a>
+            <!-- <input type="reset" value="Resetar"> -->
+            <button name="enviarDados" value="DEL" type="submit">
+              Confirmar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

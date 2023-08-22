@@ -1,0 +1,13 @@
+.error {
+  margin-left: 50%;
+  transform: translate(-50%);
+  margin-top: 5%;
+  font-size: 1.2em;
+  width: 355px;
+  padding: 5px 10px;
+  margin-bottom: 8px;
+  color: red;
+  background-color: #00285f;
+  text-align: center;
+  border-radius: 20px;
+}
