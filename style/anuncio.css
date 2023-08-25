@@ -51,6 +51,12 @@
   color: red;
   border-color: red;
 }
+/* alterado para funcionamento do netlify */
+.form-container .btn-submit:hover {
+  transform: scale(1.05);
+  color: var(--orange);
+  border-color: var(--orange);
+}
 
 .btn button:hover {
   transform: scale(1.05);
