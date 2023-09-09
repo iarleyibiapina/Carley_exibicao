@@ -8,32 +8,40 @@
     <link rel="icon" href="../images/logo.png" />
     <link rel="stylesheet" href="../style/painel_logado.css" />
     <link rel="stylesheet" href="../style/modal.css" />
+    <link rel="stylesheet" href="../style/media.css" />
   </head>
   <body>
     <header>
       <div class="nome">
         <h1>Bem vindo, 'usuario xxxx xxxx'!</h1>
-      </div>
-      <nav>
         <div class="hover-icon" onclick="see_profile()" title="Abrir perfil">
           <ion-icon class="user-icon" name="person-circle-outline"></ion-icon
           >Visualizar Perfil
         </div>
-        <ul>
-          <a href="../anuncio/cadastrar_anuncio.html">Inserir anuncio</a>
-        </ul>
-        <!-- se 1, atualiza a pagina verifica IF em cima e retorna sql com dados apenas do usuario -->
-        <ul>
-          <a href="./meuAnuncio.html">Meus anuncios</a>
-        </ul>
-        <!-- se 0, atualiza pagina passa no IF, e exibe todos -->
-        <ul>
-          <a href="./painel.html">Ver todos anuncios</a>
-        </ul>
-        <ul>
-          <a class="logout" href="../index.html">Sair</a>
+      </div>
+      <!-- NAVBAR -->
+      <nav>
+        <div class="btn-navbar" id="btn-abrir-navbar">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="../anuncio/cadastrar_anuncio.html">Inserir anuncio</a>
+          </li>
+          <!-- se 1, atualiza a pagina verifica IF em cima e retorna sql com dados apenas do usuario -->
+          <li>
+            <a href="./meuAnuncio.html">Meus anuncios</a>
+          </li>
+          <!-- se 0, atualiza pagina passa no IF, e exibe todos -->
+          <li>
+            <a href="./painel.html">Ver todos anuncios</a>
+          </li>
+          <li>
+            <a class="logout" href="../index.html">Sair</a>
+          </li>
         </ul>
       </nav>
+      <!-- FIM NAVBAR -->
     </header>
     <main>
       <div id="open_modal" class="modal">
@@ -231,5 +239,52 @@
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
     ></script>
+    <script>
+      class MobileNav {
+        constructor(menu, navList, navLinks) {
+          this.menu = document.querySelector(menu);
+          this.navList = document.querySelector(navList);
+          this.navLinks = document.querySelectorAll(navLinks);
+          this.activeClass = "active";
+
+          this.handleClick = this.handleClick.bind(this);
+        }
+
+        animateLinks() {
+          this.navLinks.forEach((link, index) => {
+            link.style.animation
+              ? (link.style.animation = "")
+              : (link.style.animation = `navLinkFade 0.5s ease forwards ${
+                  index / 7 + 0.3
+                }s`);
+          });
+        }
+
+        handleClick() {
+          this.navList.classList.toggle(this.activeClass);
+          this.menu.classList.toggle(this.activeClass);
+          this.animateLinks();
+        }
+
+        addClickEvent() {
+          this.menu.addEventListener("click", this.handleClick);
+        }
+        // inicia SE a classe menu esta no documento, if sozinho retorna true ou falso
+        init() {
+          if (this.menu) {
+            this.addClickEvent();
+          }
+          return this;
+        }
+      }
+
+      const mobileNav = new MobileNav(
+        ".btn-navbar",
+        ".nav-list",
+        ".nav-list li"
+      );
+
+      mobileNav.init();
+    </script>
   </body>
 </html>
