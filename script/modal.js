@@ -1,6 +1,6 @@
 var modal = document.getElementById("open_modal");
 var announcement = document.getElementById("announcement_modal");
-var main = document.querySelector("section");
+var main = document.querySelector("main");
 
 function see_profile() {
   modal.classList.toggle("open");
@@ -24,5 +24,3 @@ main.addEventListener("click", (event) => {
     fecharModal();
   }
 });
-
-
