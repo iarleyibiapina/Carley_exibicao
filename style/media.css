@@ -1,5 +1,5 @@
 @media (max-width: 768px) {
-  body {
+  html {
     overflow-x: hidden;
   }
 
@@ -37,6 +37,7 @@
   .nav-list {
     position: absolute;
     top: 7vh;
+    display: none;
     right: 0;
     width: 30vw;
     height: 30vh;
