@@ -13,25 +13,27 @@
     <header>
       <div class="nome">
         <h1>Bem vindo, 'usuario xxxx xxxx'!</h1>
-      </div>
-      <nav>
         <div class="hover-icon" onclick="see_profile()" title="Abrir perfil">
           <ion-icon class="user-icon" name="person-circle-outline"></ion-icon
           >Visualizar Perfil
         </div>
-        <ul>
-          <a href="../anuncio/cadastrar_anuncio.html">Inserir anuncio</a>
-        </ul>
-        <!-- se 1, atualiza a pagina verifica IF em cima e retorna sql com dados apenas do usuario -->
-        <ul>
-          <a href="./meuAnuncio.html">Meus anuncios</a>
-        </ul>
-        <!-- se 0, atualiza pagina passa no IF, e exibe todos -->
-        <ul>
-          <a href="./painel.html">Ver todos anuncios</a>
-        </ul>
-        <ul>
-          <a class="logout" href="../index.html">Sair</a>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li>
+            <a href="../anuncio/cadastrar_anuncio.html">Inserir anuncio</a>
+          </li>
+          <!-- se 1, atualiza a pagina verifica IF em cima e retorna sql com dados apenas do usuario -->
+          <li>
+            <a href="./meuAnuncio.html">Meus anuncios</a>
+          </li>
+          <!-- se 0, atualiza pagina passa no IF, e exibe todos -->
+          <li>
+            <a href="./painel.html">Ver todos anuncios</a>
+          </li>
+          <li>
+            <a class="logout" href="../index.html">Sair</a>
+          </li>
         </ul>
       </nav>
     </header>
